@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TinyEarth — 微型地球沙盒</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div id="app">
+    <canvas id="earth-canvas"></canvas>
+
+    <aside id="control-panel">
+      <header class="panel-header">
+        <h1>TinyEarth</h1>
+        <p class="subtitle">微型地球沙盒</p>
+      </header>
+
+      <div class="btn-row">
+        <button id="btn-toggle" class="btn primary" title="开始/暂停">▶ 开始</button>
+        <button id="btn-speed" class="btn" title="加速">⏩ 1×</button>
+      </div>
+      <div class="btn-row">
+        <button id="btn-save" class="btn accent" title="存档">💾 存档</button>
+        <button id="btn-restart" class="btn danger" title="重启">↺ 重启</button>
+      </div>
+
+      <section class="info-block">
+        <h2>时间</h2>
+        <div id="time-display" class="mono">—</div>
+        <div id="season-display" class="season-badge">—</div>
+      </section>
+
+      <section class="info-block">
+        <h2>环境</h2>
+        <div class="stat"><span>北半球</span><span id="north-season">—</span></div>
+        <div class="stat"><span>南半球</span><span id="south-season">—</span></div>
+        <div class="stat"><span>日照角</span><span id="sun-angle">—</span></div>
+        <div class="stat"><span>植被</span><span id="veg-count">—</span></div>
+      </section>
+
+      <section class="info-block">
+        <h2>存档</h2>
+        <p class="hint save-hint">点击存档项手动加载 · 启动不会自动读档</p>
+        <div id="save-list" class="save-list">
+          <p class="hint">暂无存档</p>
+        </div>
+      </section>
+
+      <footer class="panel-footer">
+        <span>拖拽旋转 · 滚轮缩放</span>
+      </footer>
+    </aside>
+
+    <div id="time-panel">
+      <div class="clock-date" id="clock-date">—</div>
+      <div class="clock-time mono" id="clock-time">00:00:00</div>
+      <div class="clock-utc">UTC 世界时</div>
+      <div class="clock-season-row">
+        <span id="clock-season" class="season-badge">—</span>
+        <span id="clock-phase" class="phase-badge">—</span>
+      </div>
+      <div class="day-night-bar">
+        <div id="day-night-fill" class="day-night-fill"></div>
+        <div id="day-night-marker" class="day-night-marker"></div>
+      </div>
+      <div class="clock-solar">
+        <span>☀ <span id="clock-sunrise">—</span></span>
+        <span>日照 <span id="clock-daylight">—</span>h</span>
+        <span>🌙 <span id="clock-sunset">—</span></span>
+      </div>
+    </div>
+
+    <div id="loading-overlay">
+      <div class="loader">
+        <div class="loader-earth"></div>
+        <p>正在构建地球…</p>
+      </div>
+    </div>
+
+    <div id="toast-container"></div>
+  </div>
+
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "/vendor/three/build/three.module.js",
+      "three/addons/": "/vendor/three/examples/jsm/"
+    }
+  }
+  </script>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

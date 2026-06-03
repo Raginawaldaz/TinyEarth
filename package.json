@@ -1,0 +1,15 @@
+{
+  "name": "tinyearth",
+  "version": "1.0.0",
+  "description": "A miniature Earth sandbox with seasons, vegetation, and save system",
+  "type": "module",
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "node backend/server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "three": "^0.170.0"
+  }
+}
