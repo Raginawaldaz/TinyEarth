@@ -82,3 +82,9 @@ TinyEarth/
 - 启动时同步**当前真实 UTC 时间**
 - 每天 24 小时，季节与真实日历对齐
 - **1× 速度**：1 真实秒 = 1 游戏分钟（完整一天约 24 真实分钟）
+
+## 📄 License
+This project is licensed under the [Apache-2.0 License](LICENSE).
+
+## 🙏 Credits & Acknowledgments
+- Earth textures, bump maps, and topographic data are derived from NASA Visible Earth / Solar System Scope (Public Domain / CC BY 4.0).
